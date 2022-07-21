@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mask() {
+            var separador = document.getElementById('amount');
+            separador.addEventListener('keyup', (e) => {
+                var entrada = e.target.value.split(',').join('');
+                entrada = entrada.split('').reverse();
+
+                var salida = [];
+                var aux = '';
+
+                var paginador = Math.ceil(entrada.length / 3);
+
+                for (let i = 0; i < paginador; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        if (entrada[j + (i * 3)] != undefined) {
+                            aux += entrada[j + (i * 3)];
+                        }
+                    }
+                    salida.push(aux);
+                    aux = '';
+
+                    e.target.value = salida.join(',').split("").reverse().join('');
+                }
+            }, false);
+        }
+
+        function validar() {
+
+            var name = document.getElementById("name").value.trim();
+            var lname = document.getElementById("lname").value;
+            var cnumber = document.getElementById("cnumber").value;
+            var ddate = document.getElementById("ddate").value;
+            var cvv = document.getElementById("cvv").value;
+            var amount = document.getElementById("amount").value;
+            var pais = document.getElementById("validatedInputGroupSelect").value;
+            var tipop = document.getElementById("inputPtype").value;
+            var txt;
+            var expression = /\d{2}\/\d{2}/;
+            var numero = / \d /
+
+            //validacion de Tipo de Pais
+            var indice = document.getElementById("validatedInputGroupSelect").selectedIndex;
+            if (indice == null || indice == 0) {
+                //alert("El pais debe ser seleccionado");
+                txt = "El pais debe ser seleccionado";
+                document.getElementById("pais").innerHTML = txt;
+                document.getElementById("validatedInputGroupSelect").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("pais").innerHTML = "";
+                document.getElementById("validatedInputGroupSelect").style.borderColor = "lightgreen";
+            }
+
+
+
+            //validacion de nombre
+            if (name.length < 1) {
+                //alert("No se ha introducido ningun nombre");
+                txt = "No se ha introducido ningun nombre";
+                document.getElementById("nombre").innerHTML = txt;
+                document.getElementById("name").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("nombre").innerHTML = "";
+                document.getElementById("name").style.borderColor = "lightgreen";
+            }
+
+            for (var i = 0; i < name.length; i++) {
+                var caracter = name.charAt(i);
+                if (caracter == " ") {
+                    //alert("No se admiten espacios en el campo nombre");
+                    txt = "No se admiten espacios en el campo nombre";
+                    document.getElementById("name").style.borderColor = "red";
+                    document.getElementById("nombre").innerHTML = txt;
+                    return false;
+                } else {
+                    document.getElementById("nombre").innerHTML = "";
+                    document.getElementById("name").style.borderColor = "lightgreen";
+                }
+            }
+
+            for (var i = 0; i < name.length; i++) {
+                var caracter = name.charAt(i);
+                if ((caracter == "0") || (caracter == "1") || (caracter == "2") || (caracter == "3") || (caracter == "4") || (caracter == "5") || (caracter == "6") || (caracter == "7") || (caracter == "8") || (caracter == "9")) {
+                    //alert("No se admiten numeros en el campo nombre");
+                    txt = "No se admiten numeros en el campo nombre";
+                    document.getElementById("name").style.borderColor = "red";
+                    document.getElementById("nombre").innerHTML = txt;
+                    return false;
+                } else {
+                    document.getElementById("nombre").innerHTML = "";
+                    document.getElementById("name").style.borderColor = "lightgreen";
+                }
+            }
+
+            if ((name.length < 5) || (name.length > 10)) {
+                //alert("El nombre introducido fue de " + name.length + " caracteres. Por favor introducir uno entre 5 y 10 caracteres.");
+                txt = "El nombre introducido fue de " + name.length + " caracteres. Por favor introducir uno entre 5 y 10 caracteres.";
+                document.getElementById("nombre").innerHTML = txt;
+                document.getElementById("name").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("nombre").innerHTML = "";
+                document.getElementById("name").style.borderColor = "lightgreen";
+            }
+
+
+
+            //validacion de apellido
+            if (lname.length < 1) {
+                //alert("No se ha introducido ningun apellido");
+                txt = "No se ha introducido ningun apellido";
+                document.getElementById("apellido").innerHTML = txt;
+                document.getElementById("lname").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("apellido").innerHTML = "";
+                document.getElementById("lname").style.borderColor = "lightgreen";
+            }
+
+            for (var i = 0; i < lname.length; i++) {
+                var caracter = lname.charAt(i);
+                if (caracter == " ") {
+                    //alert("No se admiten espacios en el campo apellido");
+                    txt = "No se admiten espacios en el campo apellido";
+                    document.getElementById("lname").style.borderColor = "red";
+                    document.getElementById("apellido").innerHTML = txt;
+                    return false;
+                } else {
+                    document.getElementById("apellido").innerHTML = "";
+                    document.getElementById("lname").style.borderColor = "lightgreen";
+                }
+            }
+
+            for (var i = 0; i < lname.length; i++) {
+                var caracter = lname.charAt(i);
+                if ((caracter == "0") || (caracter == "1") || (caracter == "2") || (caracter == "3") || (caracter == "4") || (caracter == "5") || (caracter == "6") || (caracter == "7") || (caracter == "8") || (caracter == "9")) {
+                    //alert("No se admiten numeros en el campo apellido");
+                    txt = "No se admiten numeros en el campo apellido";
+                    document.getElementById("lname").style.borderColor = "red";
+                    document.getElementById("apellido").innerHTML = txt;
+                    return false;
+                } else {
+                    document.getElementById("apellido").innerHTML = "";
+                    document.getElementById("lname").style.borderColor = "lightgreen";
+                }
+            }
+
+            if ((lname.length < 5) || (lname.length > 10)) {
+                //alert("El apellido introducido fue de " + lname.length + " caracteres. Por favor introducir uno entre 5 y 10 caracteres.");
+                txt = "El apellido introducido fue de " + name.length + " caracteres. Por favor introducir uno entre 5 y 10 caracteres.";
+                document.getElementById("apellido").innerHTML = txt;
+                document.getElementById("lname").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("apellido").innerHTML = "";
+                document.getElementById("lname").style.borderColor = "lightgreen";
+            }
+
+            //validacion del monto
+            if (amount.length < 1) {
+                //alert("No se ha introducido ningun cvv");
+                txt = "No se ha introducido ningun monto";
+                document.getElementById("monto").innerHTML = txt;
+                document.getElementById("amount").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("monto").innerHTML = "";
+                document.getElementById("amount").style.borderColor = "lightgreen";
+            }
+
+            for (var i = 0; i < amount.length; i++) {
+                var caracter = amount.charAt(i);
+                if ((caracter != "1") && (caracter != "2") && (caracter != "3") && (caracter != "4") && (caracter != "5") && (caracter != "6") && (caracter != "7") && (caracter != "8") && (caracter != "9") && (caracter != "0") && (caracter != ",")) {
+                    txt = "El monto debe ser digitado con valores numericos";
+                    document.getElementById("monto").innerHTML = txt;
+                    document.getElementById("amount").style.borderColor = "red";
+                    return false;
+                } else {
+                    document.getElementById("monto").innerHTML = "";
+                    document.getElementById("amount").style.borderColor = "lightgreen";
+                }
+            }
+
+
+
+            //validacion de Card Number
+            if (cnumber.length < 1) {
+                //alert("No se ha introducido un numero de tarjeta");
+                txt = "No se ha introducido un numero de tarjeta";
+                document.getElementById("ntarjeta").innerHTML = txt;
+                document.getElementById("cnumber").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("ntarjeta").innerHTML = "";
+                document.getElementById("cnumber").style.borderColor = "lightgreen";
+            }
+
+            if (isNaN(cnumber)) {
+                //alert("El numero de tarjeta debe ser digitado con valores numericos sin guiones, ni espacios.");
+                txt = "El numero de tarjeta debe ser digitado con valores numericos sin guiones, ni espacios.";
+                document.getElementById("ntarjeta").innerHTML = txt;
+                document.getElementById("cnumber").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("ntarjeta").innerHTML = "";
+                document.getElementById("cnumber").style.borderColor = "lightgreen";
+            }
+
+            if (cnumber.length != 16) {
+                //alert("El numero de tarjeta debe ser de 16 digitos.");
+                txt = "El numero de tarjeta debe ser de 16 digitos.";
+                document.getElementById("ntarjeta").innerHTML = txt;
+                document.getElementById("cnumber").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("ntarjeta").innerHTML = "";
+                document.getElementById("cnumber").style.borderColor = "lightgreen";
+            }
+
+
+
+            //validacion de Fecha de Vencimiento
+            if (ddate.length < 1) {
+                //alert("No se ha introducido una fecha de vencimiento");
+                txt = "No se ha introducido una fecha de vencimiento";
+                document.getElementById("fecha").innerHTML = txt;
+                document.getElementById("ddate").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("fecha").innerHTML = "";
+                document.getElementById("ddate").style.borderColor = "lightgreen";
+            }
+
+
+            if (!expression.test(ddate)) {
+                //alert("La fecha de vencimiento debe ser introducida bajo el siguiente formato 00/00");
+                txt = "La fecha de vencimiento debe ser introducida bajo el siguiente formato 00/00";
+                document.getElementById("fecha").innerHTML = txt;
+                document.getElementById("ddate").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("fecha").innerHTML = "";
+                document.getElementById("ddate").style.borderColor = "lightgreen";
+            }
+
+            if (ddate.length != 5) {
+                //alert("La fecha de vencimiento debe contener 4 digitos divididos por un /.");
+                txt = "La fecha de vencimiento debe contener 4 digitos divididos por un /.";
+                document.getElementById("fecha").innerHTML = txt;
+                document.getElementById("ddate").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("fecha").innerHTML = "";
+                document.getElementById("ddate").style.borderColor = "lightgreen";
+            }
+
+            for (var i = 0; i < ddate.length; i++) {
+                var caracter = ddate.charAt(i);
+                if (caracter == " ") {
+                    //alert("No se admiten espacios en el campo fecha");
+                    txt = "No se admiten espacios en el campo fecha";
+                    document.getElementById("fecha").innerHTML = txt;
+                    document.getElementById("ddate").style.borderColor = "red";
+                    return false;
+                } else {
+                    document.getElementById("fecha").innerHTML = "";
+                    document.getElementById("ddate").style.borderColor = "lightgreen";
+                }
+            }
+
+            var caracter0 = ddate.charAt(0);
+            var caracter1 = ddate.charAt(1);
+            var caracter3 = ddate.charAt(3);
+            var caracter4 = ddate.charAt(4);
+            var mes = caracter0 + caracter1;
+            var año = caracter3 + caracter4;
+            var ano = (new Date).getFullYear();
+            var mes1 = (new Date).getMonth();
+            if ((caracter0 > 1) || ((caracter0 == 1) && (caracter1 > 2))) {
+                //alert("Ingrese una fecha valida");
+                txt = "Ingrese una fecha valida";
+                document.getElementById("fecha").innerHTML = txt;
+                document.getElementById("ddate").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("fecha").innerHTML = "";
+                document.getElementById("ddate").style.borderColor = "lightgreen";
+            }
+
+            if (((parseInt(año) + 2000) < ano) || ((parseInt(mes) < (mes1 + 1)) && ((parseInt(año) + 2000) == ano))) {
+                //alert("Ha introducido una tarjeta expirada");
+                txt = "Ha introducido una tarjeta expirada";
+                document.getElementById("fecha").innerHTML = txt;
+                document.getElementById("ddate").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("fecha").innerHTML = "";
+                document.getElementById("ddate").style.borderColor = "lightgreen";
+            }
+
+
+
+            //validacion de Tipo de Pago
+            var indice = document.getElementById("inputPtype").selectedIndex;
+            if (indice == null || indice == 0) {
+                //alert("El tipo de tarjeta debe ser seleccionado");
+                txt = "El tipo de tarjeta debe ser seleccionado";
+                document.getElementById("tpago").innerHTML = txt;
+                document.getElementById("inputPtype").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("tpago").innerHTML = "";
+                document.getElementById("inputPtype").style.borderColor = "lightgreen";
+            }
+
+            //validacion de cvv
+            if (cvv.length < 1) {
+                //alert("No se ha introducido ningun cvv");
+                txt = "No se ha introducido ningun cvv";
+                document.getElementById("csc").innerHTML = txt;
+                document.getElementById("cvv").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("csc").innerHTML = "";
+                document.getElementById("cvv").style.borderColor = "lightgreen";
+            }
+
+            if (isNaN(cvv)) {
+                //alert("El cvv debe ser digitado con valores numericos");
+                txt = "El cvv debe ser digitado con valores numericos";
+                document.getElementById("csc").innerHTML = txt;
+                document.getElementById("cvv").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("csc").innerHTML = "";
+                document.getElementById("cvv").style.borderColor = "lightgreen";
+            }
+
+            if (cvv.length != 3) {
+                //alert("El cvv debe tener 3 digitos.");
+                txt = "El cvv debe tener 3 digitos.";
+                document.getElementById("csc").innerHTML = txt;
+                document.getElementById("cvv").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("csc").innerHTML = "";
+                document.getElementById("cvv").style.borderColor = "lightgreen";
+            }
+
+
+
+            var a = prompt("Los datos Ingresados fueron los siguiente:\nNombre: " + name + "\nApellido: " + lname + "\nPais: " + pais + "\nMonto: US$" + amount +
+                "\nNumero de Tarjeta: " + cnumber + "\nFecha de Vencimiento: " + ddate + "\nTipo de pago: " + tipop + "\nCVV: " + cvv + "\n\n¿Es esta informacion Correcta?\nY= yes\nN= no");
+            if ((a == "y") || (a == "Y")) {
+                return true;
+            } else if ((a == "n") || (a == "N")) {
+                return false;
+            } else if ((a != "n") && (a != "N") && (a != "n") && (a != "N")) {
+                alert("Ingrese una opcion valida");
+                a = prompt("Los datos Ingresados fueron los siguiente:\nNombre: " + name + "\nApellido: " + lname + "\nPais: " + pais + "\nMonto: US$" + amount +
+                    "\nNumero de Tarjeta: " + cnumber + "\nFecha de Vencimiento: " + ddate + "\nTipo de pago: " + tipop + "\nCVV: " + cvv + "\n\n¿Es esta informacion Correcta?\nY= yes\nN= no");
+                return false;
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        @media (min-width: 300px) {
+            body {
+                margin: auto;
+                padding: auto;
+                background-size: 100% 100%;
+                background-image: linear-gradient(aqua, blue);
+                font-family: monospace;
+            }
+            p {
+                color: red;
+                font-size: 10px;
+            }
+            .center {
+                text-align: center;
+            }
+            form {
+                border: solid 1px aquama;
+                border-radius: 5px;
+                padding: 15px;
+                padding-top: 0%;
+                width: 350px;
+                margin: 0 auto;
+                background-color: white;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                text-align: center;
+                font-size: 1px;
+                color: blue;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            label {
+                font-size: 15px;
+                text-align: left;
+                color: black;
+            }
+            #enviar {
+                width: 5cm;
+                background-image: linear-gradient(to left, aqua, blue);
+                border-radius: 50px;
+            }
+            img {
+                width: 150px;
+                margin-top: 10px;
+                box-shadow: 10px 10px grey;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                margin: auto;
+                padding: auto;
+                background-size: 100%;
+                background-image: linear-gradient(aqua, blue);
+                font-family: monospace;
+            }
+            p {
+                color: red;
+                font-size: 10px;
+            }
+            h1 {
+                font-size: 45px;
+            }
+            .center {
+                text-align: center;
+            }
+            form {
+                border: solid 1px aquama;
+                border-radius: 5px;
+                padding: 15px;
+                padding-top: 0%;
+                width: 700px;
+                margin: 0 auto;
+                background-color: white;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                text-align: center;
+                color: blue;
+            }
+            label {
+                font-size: 30px;
+                text-align: left;
+                color: black;
+            }
+            #enviar {
+                width: 5cm;
+                background-image: linear-gradient(to left, aqua, blue);
+                border-radius: 50px;
+            }
+            img {
+                width: 400px;
+                margin-top: 10px;
+                box-shadow: 10px 10px grey;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            body {
+                margin: auto;
+                padding: auto;
+                background-size: 100%;
+                background-image: linear-gradient(aqua, blue);
+                font-family: monospace;
+            }
+            p {
+                color: red;
+                font-size: 15px;
+            }
+            h1 {
+                font-size: 54px;
+                margin-bottom: 50px;
+            }
+            .center {
+                text-align: center;
+            }
+            form {
+                border: solid 1px aquama;
+                border-radius: 5px;
+                padding: 15px;
+                padding-top: 0%;
+                width: 900px;
+                height: auto;
+                margin: 0 auto;
+                background-color: white;
+                margin-top: 50px;
+                margin-bottom: 75px;
+                text-align: center;
+                color: blue;
+            }
+            label {
+                font-size: 30px;
+                text-align: left;
+                color: black;
+            }
+            #enviar {
+                width: 5cm;
+                background-image: linear-gradient(to left, aqua, blue);
+                border-radius: 50px;
+            }
+            img {
+                width: 450px;
+                margin-top: 10px;
+                box-shadow: 10px 10px grey;
+                margin-bottom: 100px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            body {
+                margin: auto;
+                padding: auto;
+                background-size: 100% 100%;
+                background-image: linear-gradient(aqua, blue);
+                font-family: monospace;
+            }
+            .form-control {
+                font-size: 20px;
+            }
+            h1 {
+                font-size: 60px;
+                margin-bottom: 50px;
+            }
+            p {
+                color: red;
+                font-size: 15px;
+            }
+            .center {
+                text-align: center;
+            }
+            form {
+                border: solid 1px aquama;
+                border-radius: 5px;
+                padding: 50px;
+                padding-top: 0%;
+                width: 1000px;
+                margin: 0 auto;
+                background-color: white;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                text-align: center;
+                color: blue;
+            }
+            label {
+                font-size: 25px;
+                text-align: left;
+                color: black;
+            }
+            #enviar {
+                width: 5cm;
+                background-image: linear-gradient(to left, aqua, blue);
+                border-radius: 50px;
+            }
+            img {
+                width: 500px;
+                margin-top: 30px;
+                box-shadow: 10px 10px grey;
+                margin-bottom: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="center">
+
+        <h1>Hecho por Vicente Luna</h1>
+
+    </header>
+    <div>
+        <form class="center">
+            <img src="https://www.siderex.es/wp-content/uploads/2019/03/isend_MARCA_LOGO-HORIZONTAL-01.jpg" alt="">
+            <br><br>
+            <h1 class="form"><u>Formulario de Donaciones</u></h1>
+            <br>
+            <div class="mb-3">
+                <div class="input-group is-invalid">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="validatedInputGroupSelect">Country</label>
+                    </div>
+                    <select class="custom-select" id="validatedInputGroupSelect" required>
+                    <option >Choose an option...</option>
+                    <option >Dominican Republic</option>
+                    <option >Cuba</option>
+                    <option >Panama</option>
+                    <option >United State</option>
+                    <option >Canada</option>
+                  </select>
+                </div>
+                <p class="error" id="pais"></p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="inputName">First Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Type your first name here...">
+                    <p class="error" id="nombre"></p>
+                </div>
+                <div class="col">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" id="lname" class="form-control" placeholder="Type your last name here...">
+                    <p class="error" id="apellido"></p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <label for="inputNumber">Amount</label>
+                    <input type="text" id="amount" class="form-control" placeholder="Type the amount here..." onkeypress="mask()">
+                    <p class="error" id="monto"></p>
+                </div>
+                <div class="col">
+                    <label for="inputNumber">Card Number</label>
+                    <input type="text" id="cnumber" class="form-control" placeholder="Type your card number here..." maxlength="16">
+                    <p class="error" id="ntarjeta"></p>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputDueDate">Due Date</label>
+                    <input type="text" id="ddate" class="form-control" placeholder="Example 06/23">
+                    <p class="error" id="fecha"></p>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputPaymentType">Payment Type</label>
+                    <select id="inputPtype" class="form-control">
+                  <option selected>Choose an option...</option>
+                  <option>MasterCard</option>
+                  <option>Visa</option>
+                </select>
+                    <p class="error" id="tpago"></p>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputCvv">Cvv</label>
+                    <input type="text" class="form-control" id="cvv" placeholder="000" maxlength="3">
+                    <p class="error" id="csc"></p>
+                </div>
+            </div>
+            <br>
+
+            <input id="enviar" type="submit" onclick="return validar()" value="Send" class="btn btn-primary">
+
+
+        </form>
+    </div>
+</body>
+
+</html>

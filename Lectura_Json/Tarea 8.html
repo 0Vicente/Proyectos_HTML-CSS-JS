@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts",
+                type: "GET",
+            }).then(function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    $("#tablePosts").append("<tr> <td>" + data[i].userId + "</td> <td>" + data[i].id + "</td> <td>" + data[i].title + "</td> <td>" + data[i].body + "</td><tr>");
+                }
+
+            });
+        });
+    </script>
+
+    <style>
+        table,
+        td,
+        th {
+            border: solid 1px black;
+            border-collapse: collapse;
+        }
+        
+        body {
+            text-align: center;
+        }
+        
+        th {
+            color: darkblue;
+            font-size: 30px;
+            padding: 1cm;
+        }
+        
+        td {
+            color: blue;
+            padding: 15px;
+            font-size: 15px;
+        }
+        
+        table {
+            padding: 1cm;
+            border: solid black;
+            background-color: whitesmoke;
+        }
+        
+        caption {
+            font-size: 50px;
+            color: darkblue;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Vicente Luna Figuereo 402-2418938-7</h1>
+    <h1>Adrian Azor Miguel 402-0042374-3</h1>
+    <h1>Luis Gabriel García Concepción 402-0044815-3</h1>
+    <center>
+        <div>
+            <table id="tablePosts">
+                <thead>
+                    <tr>
+                        <caption>Ejercicio cargar tabla con Json Rest</caption>
+                        <th>UserId</th>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Body</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </center>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+body {
+    background-image: url("https://thumbs.dreamstime.com/b/fondos-azules-abstractos-impresionantes-del-vector-79973725.jpg");
+    margin: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+nav ul {
+    padding: 0.5rem;
+}
+
+#carouselExampleCaptions img {
+    width: 500px;
+    height: 400px;
+}
+
+.carousel-caption h5,
+p {
+    color: black;
+}
+
+.card {
+    margin: 5rem;
+}
+
+.foto img {
+    width: 600px;
+    height: 400px;
+}
+
+.text_foto {
+    margin-left: -5rem;
+}
+
+.botones {
+    margin: 5rem;
+    margin-bottom: -2rem;
+    padding-left: 2rem;
+}
+
+.botonb {
+    padding: 3rem;
+    margin-left: 9rem;
+    font-size: 2rem;
+}
+
+.botona {
+    padding: 3rem;
+    font-size: 2rem;
+}
+
+.servicio {
+    margin: 5rem;
+}
+
+.servicio1 {
+    background-image: url("https://image.winudf.com/v2/image/Y29tLmJvcmlzcy5CbHVlV2FsbHBhcGVyc0hEX3NjcmVlbl80XzE1Mzk3MjU4NTRfMDA0/screen-4.jpg?fakeurl=1&type=.jpg");
+}
+
+.servicio2 {
+    margin-left: 4rem;
+    background-image: url("https://iphoneroscdn-iphoneros.netdna-ssl.com/wp-content/uploads/2015/02/azul_abstracto_ordenador_iphoneroscom.jpg");
+}
+
+.servicio3 {
+    margin: 5rem;
+    background-image: url("https://2.bp.blogspot.com/-r6q9GN546uA/Ugyj7HFm_yI/AAAAAAAAypI/CjSGJfaJdBQ/s1600/fondoenazulparaimprimir1.gif");
+}
+
+.cartcorreo {
+    margin-bottom: -5rem;
+}
+
+.cartresto {
+    margin: -7rem;
+    margin-left: -10rem;
+    margin-right: -10rem;
+    padding: 2rem;
+}

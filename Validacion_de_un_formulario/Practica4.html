@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <H1>Bienvenido a <br> Cielo y Agua Spa and Resort</H1>
+    <form action="">
+        <Fieldset>
+            <legend>Formulario de inscripcion</legend>
+            <div>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre">
+            </div>
+            <div>
+                <label for="cedula">Cedula:</label><br>
+                <input type="text" id="cedula">
+            </div>
+            <div>
+                <label for="direccion">Direccion:</label><br>
+                <textarea id="direccion"></textarea>
+            </div>
+        </Fieldset>
+
+        <fieldset class="check">
+            <legend>Sexo</legend>
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label><br>
+            <input type="radio" id="femenino" name="sexo" value="femenino">
+            <label for="femenino">Femenino</label><br>
+            <input type="radio" id="otro" name="sexo" value="otro">
+            <label for="otro">Otro</label>
+        </fieldset>
+
+        <label for="select">Lugar de Nacimiento:</label><br>
+        <select name="select" id="select">
+            <option value="">- Selecciona un valor -</option>
+            <option value="">Santo Domingo</option>
+            <option value="">Samana</option>
+            <option value="">Puerto Plata</option>
+            <option value="">Nagua</option>
+            <option value="">monteCristi</option>
+        </select>
+
+        <input id="enviar" type="submit" onclick="return validar()" value="Registrar">
+
+    </form>
+
+    <cite>Hecho por Vicente Luna</cite>
+</body>
+
+</html>

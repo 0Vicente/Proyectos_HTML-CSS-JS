@@ -1,0 +1,92 @@
+body {
+    margin-top: 3em;
+    font-family: Geneva, Verdana, sans-serif;
+    background-image: url('https://www.somospalencia.es/wp-content/uploads/2018/06/water-1018808_1920.jpg');
+    text-align: center;
+}
+
+h1 {
+    background-image: url('https://pastoralsj.org/images/post/series/PadreNuestro/cielo.jpg');
+    padding: 1em;
+    background-position: 0em 15em;
+    border-radius: 5em;
+    border: ridge 1em cornflowerblue;
+    color: orangered;
+    margin-left: 2em;
+    margin-right: 2em;
+    text-decoration: underline;
+}
+
+form {
+    margin: 1em 20em 1em 20em;
+    border-radius: 0.5;
+    border: cornflowerblue double 1em;
+    background-color: azure;
+}
+
+fieldset {
+    text-align: left;
+    text-transform: capitalize;
+    text-decoration: wavy antiquewhite 2em;
+}
+
+legend {
+    background-color: skyblue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 1em;
+    border: 1em ivory outset;
+    margin-bottom: 1em;
+}
+
+label {
+    width: 20%;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 1em;
+    background-color: skyblue;
+    margin: 1em;
+    margin-top: 2em;
+}
+
+input {
+    width: 40%;
+    margin: 1em;
+    padding: 1em;
+    border: darkturquoise 1em ridge;
+    transition: width 0.4s ease-in-out;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus {
+    width: 81%;
+}
+
+textarea {
+    width: 81%;
+    margin: 1em;
+    padding: 1em;
+    border: darkturquoise 1em ridge;
+    box-sizing: border-box;
+    resize: initial;
+}
+
+.check input {
+    margin-right: 10em;
+    margin-left: -5em;
+}
+
+.check label {
+    margin-left: -15em;
+}
+
+#enviar {
+    background-color: seashell;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 81%;
+    text-size-adjust: 2em;
+}

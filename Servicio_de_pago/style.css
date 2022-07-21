@@ -1,0 +1,32 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    background-size: 100% 100%;
+    background-image: linear-gradient(aqua, blue);
+}
+
+form {
+    border: solid 1px aquama;
+    padding: 15px;
+    padding-top: 0%;
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#enviar {
+    width: 5cm;
+    background-image: linear-gradient(to left, aqua, blue);
+    border-radius: 50px;
+}
+
+.form {
+    color: darkblue;
+    text-align: center;
+}
+
+img {
+    width: 400px;
+}
