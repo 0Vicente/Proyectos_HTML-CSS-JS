@@ -1,0 +1,82 @@
+header {
+    align-items: center;
+    text-align: center;
+    color: black;
+    height: 6cm;
+    margin: 1cm;
+}
+
+h1 {
+    font-size: 1cm;
+    margin: 0.5cm;
+    text-align: center;
+    font-family: cursive;
+}
+
+h1:hover {
+    color: lightblue;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    text-align: center;
+}
+
+.grid1 {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-rows: 20% 80%;
+    border: solid black 1px;
+}
+
+.imgp {
+    border-radius: 30%;
+    width: 150px;
+    height: 100px;
+}
+
+.imgh {
+    width: 15%;
+    height: 50%;
+}
+
+.imgh:hover {
+    width: 30%;
+    height: 100%;
+}
+
+.art {
+    text-align: center;
+    border: solid black;
+    padding: 10px;
+}
+
+.art:hover {
+    background-color: gainsboro;
+}
+
+
+/* Comentar esta parte para usar el codigo personalizado */
+
+
+/*
+.perso {
+    display: none;
+}*/
+
+
+/* Descomentar el resto para el codigo personalizado */
+
+.pers {
+    display: none;
+}
+
+h4 {
+    display: none;
+}

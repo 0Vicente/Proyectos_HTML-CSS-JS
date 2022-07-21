@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="..\Primer_Restaurante\Style.css">
+
+    <script>
+        var Guarnisiones = ["Papas Fritas", "Tostones", "Ensalada Verde", "Arroz Frito", "Ensalada Mixta"];
+        var Plato = ["Bistec", "Churrasco", "Pollo Frito", "Pescado a la Plancha", "Alitas Picantes"];
+        var Bebidas = ["Botella de Agua", "Refresco", "Jugo Natural", "Cerveza", "Piña Colada"];
+        var pguarnisiones = [100, 200, 300, 400, 500];
+        var pplato = [500, 1000, 1500, 2000, 2500];
+        var pbebidas = [10, 20, 30, 40, 50];
+        var acump = 0;
+        var compra = "";
+        var p = 0;
+        var g = 0;
+        var pl = 0;
+        var b = 0;
+
+
+        //Codigo personalizado: debe comentar la clase perso en la hoja de estilos y comentar la otra parte del codigo(la parte de abajo de este codigo) para usar esta parte del codigo sin problemas
+
+
+        function acum(p) {
+            switch (p) {
+                case 1:
+                    compra = compra + Guarnisiones[0] + " = RD$" + pguarnisiones[0] + "\n";
+                    acump = acump + pguarnisiones[0];
+                    break;
+                case 2:
+                    compra = compra + Guarnisiones[1] + " = RD$" + pguarnisiones[1] + "\n";
+                    acump = acump + pguarnisiones[1];
+                    break;
+                case 3:
+                    compra = compra + Guarnisiones[2] + " = RD$" + pguarnisiones[2] + "\n";
+                    acump = acump + pguarnisiones[2];
+                    break;
+                case 4:
+                    compra = compra + Guarnisiones[3] + " = RD$" + pguarnisiones[3] + "\n";
+                    acump = acump + pguarnisiones[3];
+                    break;
+                case 5:
+                    compra = compra + Guarnisiones[4] + " = RD$" + pguarnisiones[4] + "\n";
+                    acump = acump + pguarnisiones[4];
+                    break;
+                case 6:
+                    compra = compra + Plato[0] + " = RD$" + pplato[0] + "\n";
+                    acump = acump + pplato[0];
+                    break;
+                case 7:
+                    compra = compra + Plato[1] + " = RD$" + pplato[1] + "\n";
+                    acump = acump + pplato[1];
+                    break;
+                case 8:
+                    compra = compra + Plato[2] + " = RD$" + pplato[2] + "\n";
+                    acump = acump + pplato[2];
+                    break;
+                case 9:
+                    compra = compra + Plato[3] + " = RD$" + pplato[3] + "\n";
+                    acump = acump + pplato[3];
+                    break;
+                case 10:
+                    compra = compra + Plato[4] + " = RD$" + pplato[4] + "\n";
+                    acump = acump + pplato[4];
+                    break;
+                case 11:
+                    compra = compra + Bebidas[0] + " = RD$" + pbebidas[0] + "\n";
+                    acump = acump + pbebidas[0];
+                    break;
+                case 12:
+                    compra = compra + Bebidas[1] + " = RD$" + pbebidas[1] + "\n";
+                    acump = acump + pbebidas[1];
+                    break;
+                case 13:
+                    compra = compra + Bebidas[2] + " = RD$" + pbebidas[2] + "\n";
+                    acump = acump + pbebidas[2];
+                    break;
+                case 14:
+                    compra = compra + Bebidas[3] + " = RD$" + pbebidas[3] + "\n";
+                    acump = acump + pbebidas[3];
+                    break;
+                case 15:
+                    compra = compra + Bebidas[4] + " = RD$" + pbebidas[4] + "\n";
+                    acump = acump + pbebidas[4];
+                    break;
+            }
+        }
+
+
+        function total() {
+            alert(compra + "El total de su compra es RD$" + acump)
+            acump = 0;
+            compra = "";
+        }
+
+        /*
+        //Como se pide en la tarea (Debe comentar uno de los dos codigos)
+        function guarnision() {
+            g = prompt("Elija la Guarnision que desea:");
+            if ((g > (5)) || (g < 1)) {
+                alert("Eleccion invalida");
+                g = prompt("Elija la Guarnision que desea:");
+            } else {
+                acump = acump + pguarnisiones[g - 1];
+            }
+
+        }
+
+        function plato() {
+            pl = prompt("Elija el Plato Fuerte que desea:");
+            if ((pl > (5)) || (pl < 1)) {
+                alert("Eleccion invalida");
+                pl = prompt("Elija el Plato Fuerte que desea:");
+            } else {
+                acump = acump + pplato[pl - 1];
+            }
+        }
+
+        function bebida() {
+            b = prompt("Elija la Bebida que desea:");
+            if ((b > (5)) || (b < 1)) {
+                alert("Eleccion invalida");
+                b = prompt("Elija la Bebida que desea:");
+            } else {
+                acump = acump + pbebidas[b - 1];
+            }
+        }
+
+        function total() {
+            console.log("Su pedido: \n" + Guarnisiones[g - 1] + " RD$:" + pguarnisiones[g - 1] + "\n" + Plato[pl - 1] + " RD$:" + pplato[pl - 1] + "\n" + Bebidas[b - 1] + " RD$:" + pbebidas[b - 1] +
+                "\nTotal a pagar RD$: " + acump);
+        }*/
+    </script>
+</head>
+
+<body>
+    <Header>
+        <img class="imgh" src="../Primer_Restaurante/Logo.jpg" alt="">
+        <h1>Restaurante Diplomado UASD</h1>
+    </Header>
+    <nav></nav>
+    <section>
+        <div class="grid">
+            <div class="grid2">
+                <div>
+                    <h1>Guarnisiones</h1><br>
+                </div>
+                <div class="grid1">
+                    <div class="art" id="papas">
+                        <h4>#1</h4>
+                        <img class="imgp" src="../Primer_Restaurante/papas.jpg" alt="">
+                        <h2>Papas Fritas</h2>
+                        <h3>100</h3>
+                        <button class="perso" onclick="acum(1)">Elegir</button>
+                    </div>
+                    <div class="art" id="tostones">
+                        <h4>#2</h4>
+                        <img class="imgp" src="../Primer_Restaurante/tostones.jpg" alt="">
+                        <h2>Tostones</h2>
+                        <h3>200</h3>
+                        <button class="perso" onclick="acum(2)">Elegir</button>
+                    </div>
+                    <div class="art" id="ensaladav">
+                        <h4>#3</h4>
+                        <img class="imgp" src="../Primer_Restaurante/Ensalada_verde.jpg" alt="">
+                        <h2>Ensalada Verde</h2>
+                        <h3>300</h3>
+                        <button class="perso" onclick="acum(3)">Elegir</button>
+                    </div>
+                    <div class="art" id="arroz">
+                        <h4>#4</h4>
+                        <img class="imgp" src="../Primer_Restaurante/arroz_frito.jpg" alt="">
+                        <h2>Arroz Frito</h2>
+                        <h3>400</h3>
+                        <button class="perso" onclick="acum(4)">Elegir</button>
+                    </div>
+                    <div class="art" id="ensaladam">
+                        <h4>#5</h4>
+                        <img class="imgp" src="../Primer_Restaurante/Ensalada_mixta.jpg" alt="">
+                        <h2>Ensalada Mixta</h2>
+                        <h3>500</h3>
+                        <button class="perso" onclick="acum(5)">Elegir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button class="pers" onclick="guarnision()">Elegir Guarnision</button>
+            </div>
+
+            <div class="grid2">
+                <div>
+                    <h1>Plato Fuerte</h1><br>
+                </div>
+                <div class="grid1">
+                    <div class="art" id="bistec">
+                        <h4>#1</h4>
+                        <img class="imgp" src="../Primer_Restaurante/Bistec.jpg" alt="">
+                        <h2>Bistec</h2>
+                        <h3>500</h3>
+                        <button class="perso" onclick="acum(6)">Elegir</button>
+                    </div>
+                    <div class="art" id="churrasco">
+                        <h4>#2</h4>
+                        <img class="imgp" src="../Primer_Restaurante/churrasco.jpg" alt="">
+                        <h2>Churrasco</h2>
+                        <h3>1000</h3>
+                        <button class="perso" onclick="acum(7)">Elegir</button>
+                    </div>
+                    <div class="art" id="pollo">
+                        <h4>#3</h4>
+                        <img class="imgp" src="../Primer_Restaurante/pollo-frito.jpg" alt="">
+                        <h2>Pollo Frito</h2>
+                        <h3>1500</h3>
+                        <button class="perso" onclick="acum(8)">Elegir</button>
+                    </div>
+                    <div class="art" id="pescado">
+                        <h4>#4</h4>
+                        <img class="imgp" src="../Primer_Restaurante/Pescado_a_la_plancha.jpg" alt="">
+                        <h2>Pescado a la Plancha</h2>
+                        <h3>2000</h3>
+                        <button class="perso" onclick="acum(9)">Elegir</button>
+                    </div>
+                    <div class="art" id="alitas">
+                        <h4>#5</h4>
+                        <img class="imgp" src="../Primer_Restaurante/alitas-de-pollo-picantes.jpg" alt="">
+                        <h2>Alitas Picantes</h2>
+                        <h3>2500</h3>
+                        <button class="perso" onclick="acum(10)">Elegir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button class="pers" onclick="plato()">Elegir Plato Fuerte</button>
+            </div>
+
+            <div class="grid2">
+                <div>
+                    <h1>Bebidas</h1><br>
+                </div>
+                <div class="grid1">
+                    <div class="art" id="agua">
+                        <h4>#1</h4>
+                        <img class="imgp" src="../Primer_Restaurante/agua.png" alt="">
+                        <h2>Agua</h2>
+                        <h3>10</h3>
+                        <button class="perso" onclick="acum(11)">Elegir</button>
+                    </div>
+                    <div class="art" id="refresco">
+                        <h4>#2</h4>
+                        <img class="imgp" src="../Primer_Restaurante/refrescos.jpg" alt="">
+                        <h2>Refresco</h2>
+                        <h3>20</h3>
+                        <button class="perso" onclick="acum(12)">Elegir</button>
+                    </div>
+                    <div class="art" id="jugos">
+                        <h4>#3</h4>
+                        <img class="imgp" src="../Primer_Restaurante/jugos-naturales.jpg" alt="">
+                        <h2>Jugos Naturales</h2>
+                        <h3>30</h3>
+                        <button class="perso" onclick="acum(13)">Elegir</button>
+                    </div>
+                    <div class="art" id="cerveza">
+                        <h4>#4</h4>
+                        <img class="imgp" src="../Primer_Restaurante/cerveza.png" alt="">
+                        <h2>Cerveza</h2>
+                        <h3>40</h3>
+                        <button class="perso" onclick="acum(14)">Elegir</button>
+                    </div>
+                    <div class="art" id="p_colada">
+                        <h4>#5</h4>
+                        <img class="imgp" src="../Primer_Restaurante/pina-colada.jpg" alt="">
+                        <h2>Piña Colada</h2>
+                        <h3>50</h3>
+                        <button class="perso" onclick="acum(15)">Elegir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button class="pers" onclick="bebida()">Elegir bebida</button>
+            </div>
+
+        </div>
+    </section>
+    <br>
+    <center><button onclick="total()">Realizar Pedido</button></center>
+
+    <footer>
+        <h1>Hecho por Vicente Luna</h1>
+    </footer>
+</body>
+
+</html>

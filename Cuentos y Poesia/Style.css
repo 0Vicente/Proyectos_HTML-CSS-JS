@@ -1,0 +1,105 @@
+nav a {
+    margin: 10px;
+    color: red;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+
+nav {
+    margin-top: 50px;
+    border: solid black;
+    background-color: white;
+}
+
+#h1 {
+    font-family: monospace;
+    color: blue;
+    font-size: 100px;
+}
+
+#h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 50px;
+}
+
+#h3 {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 40px;
+    text-align: center;
+}
+
+.p1 {
+    margin: 1%;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.p3 {
+    margin-right: 10cm;
+    margin-left: 3cm;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: justify;
+}
+
+.p5 {
+    margin-right: 5cm;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: teal;
+}
+
+#p5 {
+    margin-right: 1%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.grid4 {
+    display: grid;
+    grid-template-columns: 50%;
+    text-align: center;
+}
+
+.grid5 {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    margin: 0%;
+}
+
+.flexbox2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    text-align: center;
+}
+
+#img51 {
+    margin-left: 0%;
+    height: 250px;
+}
+
+#img52 {
+    margin-left: 0%;
+    height: 200px;
+}
+
+img {
+    margin-left: 3cm;
+}
+
+#img4 {
+    height: 250px;
+    margin: 0%;
+}

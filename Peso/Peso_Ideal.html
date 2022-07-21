@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function calcular() {
+
+            var altura = 0;
+            var peso = 0;
+
+            altura = prompt("Su altura es 5 o 6?");
+            if ((altura != 5) && (altura != 6)) {
+                alert("Ingrese una altura valida");
+                altura = 0;
+                altura = prompt("Su altura es 5 o 6?");
+            } else {
+                peso = prompt("Ingresa tu peso");
+            }
+
+
+            //Para altura 5
+            if ((altura == 5) && (peso < 101)) {
+                alert("Usted es una persona delgada");
+            } else if ((altura == 5) && (peso > 100) && (peso < 151)) {
+                alert("Su peso es normal");
+            } else if ((altura == 5) && (peso > 150)) {
+                alert("Usted esta en sobrepeso");
+            }
+
+            //Para altura 6
+            if ((altura == 6) && (peso < 156)) {
+                alert("Usted es una persona delgada");
+            } else if ((altura == 6) && (peso > 155) && (peso < 181)) {
+                alert("Su peso es normal");
+            } else if ((altura == 6) && (peso > 180)) {
+                alert("Usted esta en sobrepeso");
+            }
+        }
+    </script>
+
+    <style>
+        header {
+            text-align: center;
+            margin-top: 1cm;
+        }
+        
+        footer {
+            margin-top: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h3>Calcule su peso</h3>
+        <button onclick="calcular()">Calcular</button>
+    </header>
+
+
+    <footer>
+        <h1>Hecho por Vicente Luna</h1>
+    </footer>
+
+
+
+</body>
+
+</html>
