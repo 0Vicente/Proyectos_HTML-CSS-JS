@@ -24,7 +24,7 @@
                 type: "GET",
             }).then(function(data) {
                 for (var i = 0; i < data.length; i++) {
-                    $("#tablePosts").append("<tr> <td>" + data[i].userId + "</td> <td>" + data[i].id + "</td> <td>" + data[i].title + "</td> <td>" + data[i].completed + "</td><tr>");
+                    $("#tablePosts").append("<tr> <td>" + data[i].userId + "</td> <td>" + data[i].id + "</td> <td>" + data[i].title + "</td> <td>" + data[i].body + "</td><tr>");
                 }
 
             });
